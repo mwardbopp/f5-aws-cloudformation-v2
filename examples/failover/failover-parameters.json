@@ -101,7 +101,7 @@
   },
   {
     "ParameterKey": "numSubnets",
-    "ParameterValue": "4"
+    "ParameterValue": "3"
   },
   {
     "ParameterKey": "owner",
@@ -109,7 +109,7 @@
   },
   {
     "ParameterKey": "provisionExampleApp",
-    "ParameterValue": "true"
+    "ParameterValue": "false"
   },
   {
     "ParameterKey": "provisionPublicIpMgmt",
