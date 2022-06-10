@@ -9,11 +9,11 @@
   },
   {
     "ParameterKey": "artifactLocation",
-    "ParameterValue": "f5-aws-cloudformation-v2/v2.3.0.0/examples/"
+    "ParameterValue": "f5-aws-cloudformation-v2/"
   },
   {
     "ParameterKey": "bigIpRuntimeInitConfig",
-    "ParameterValue": "https://f5-cft-v2.s3.amazonaws.com/f5-aws-cloudformation-v2/v2.3.0.0/examples/quickstart/bigip-configurations/runtime-init-conf-3nic-payg-with-app.yaml"
+    "ParameterValue": "https://mwb-public.s3.eu-west-1.amazonaws.com/runtime-init-conf-3nic-payg.yaml"
   },
   {
     "ParameterKey": "bigIpRuntimeInitPackageUrl",
@@ -69,23 +69,23 @@
   },
   {
     "ParameterKey": "restrictedSrcAddressApp",
-    "ParameterValue": ""
+    "ParameterValue": "37.228.202.168/32"
   },
   {
     "ParameterKey": "restrictedSrcAddressMgmt",
-    "ParameterValue": ""
+    "ParameterValue": "37.228.202.168/32"
   },
   {
     "ParameterKey": "s3BucketName",
-    "ParameterValue": "f5-cft-v2"
+    "ParameterValue": "mwb-public"
   },
   {
     "ParameterKey": "s3BucketRegion",
-    "ParameterValue": "us-east-1"
+    "ParameterValue": "eu-west-1"
   },
   {
     "ParameterKey": "sshKey",
-    "ParameterValue": ""
+    "ParameterValue": "wardbopp-keypair"
   },
   {
     "ParameterKey": "throughput",
@@ -93,7 +93,7 @@
   },
   {
     "ParameterKey": "uniqueString",
-    "ParameterValue": "myUniqStr"
+    "ParameterValue": "mwbdademo"
   },
   {
     "ParameterKey": "version",

@@ -9,7 +9,7 @@
   },
   {
     "ParameterKey": "artifactLocation",
-    "ParameterValue": "f5-aws-cloudformation-v2/v2.3.0.0/examples/"
+    "ParameterValue": "f5-aws-cloudformation-v2/examples/"
   },
   {
     "ParameterKey": "bigIpCustomImageId",
@@ -105,7 +105,7 @@
   },
   {
     "ParameterKey": "owner",
-    "ParameterValue": "f5owner"
+    "ParameterValue": "m.ward-bopp@f5.com"
   },
   {
     "ParameterKey": "provisionExampleApp",
@@ -117,27 +117,27 @@
   },
   {
     "ParameterKey": "restrictedSrcAddressMgmt",
-    "ParameterValue": ""
+    "ParameterValue": "37.228.202.168/32"
   },
   {
     "ParameterKey": "restrictedSrcAddressApp",
-    "ParameterValue": ""
+    "ParameterValue": "37.228.202.168/32"
   },
   {
     "ParameterKey": "s3BucketName",
-    "ParameterValue": "f5-cft-v2"
+    "ParameterValue": "mwb-public"
   },
   {
     "ParameterKey": "s3BucketRegion",
-    "ParameterValue": "us-east-1"
+    "ParameterValue": "eu-west-1"
   },
   {
     "ParameterKey": "secretArn",
-    "ParameterValue": ""
+    "ParameterValue": "arn:aws:secretsmanager:eu-west-1:498142139943:secret:mySecretId-qPL8fB"
   },
   {
     "ParameterKey": "sshKey",
-    "ParameterValue": ""
+    "ParameterValue": "wardbopp-keypair"
   },
   {
     "ParameterKey": "subnetMask",
@@ -145,7 +145,7 @@
   },
   {
     "ParameterKey": "uniqueString",
-    "ParameterValue": "myUniqStr"
+    "ParameterValue": "mwbcfe"
   },
   {
     "ParameterKey": "vpcCidr",

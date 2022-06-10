@@ -5,39 +5,39 @@
   },
   {
     "ParameterKey": "artifactLocation",
-    "ParameterValue": "f5-aws-cloudformation-v2/v2.3.0.0/examples/"
+    "ParameterValue": "f5-aws-cloudformation-v2/"
   },
   {
     "ParameterKey": "bigIpExternalSelfIp",
-    "ParameterValue": "10.0.0.11"
+    "ParameterValue": "10.1.10.5"
   },
   {
     "ParameterKey": "bigIpExternalServiceIps",
-    "ParameterValue": "10.0.1.101,10.0.0.101"
+    "ParameterValue": "10.1.10.15,10.1.10.16,10.1.10.19,10.1.10.20"
   },
   {
     "ParameterKey": "bigIpExternalSubnetId",
-    "ParameterValue": ""
+    "ParameterValue": "subnet-0a08c1cab63f498a1"
   },
   {
     "ParameterKey": "bigIpInternalSelfIp",
-    "ParameterValue": "10.0.2.11"
+    "ParameterValue": "10.1.20.5"
   },
   {
     "ParameterKey": "bigIpInternalSubnetId",
-    "ParameterValue": ""
+    "ParameterValue": "subnet-003ebea805104c11d"
   },
   {
     "ParameterKey": "bigIpMgmtSelfIp",
-    "ParameterValue": "10.0.1.11"
+    "ParameterValue": "10.1.1.5"
   },
   {
     "ParameterKey": "bigIpMgmtSubnetId",
-    "ParameterValue": ""
+    "ParameterValue": "subnet-0d459182d492574da"
   },
   {
     "ParameterKey": "bigIpRuntimeInitConfig",
-    "ParameterValue": "https://f5-cft-v2.s3.amazonaws.com/f5-aws-cloudformation-v2/v2.3.0.0/examples/quickstart/bigip-configurations/runtime-init-conf-3nic-payg.yaml"
+    "ParameterValue": "https://mwb-public.s3.eu-west-1.amazonaws.com/runtime-init-conf-3nic-payg.yaml"
   },
   {
     "ParameterKey": "bigIpRuntimeInitPackageUrl",
@@ -85,23 +85,23 @@
   },
   {
     "ParameterKey": "restrictedSrcAddressApp",
-    "ParameterValue": ""
+    "ParameterValue": "37.228.202.168/32"
   },
   {
     "ParameterKey": "restrictedSrcAddressMgmt",
-    "ParameterValue": ""
+    "ParameterValue": "37.228.202.168/32"
   },
   {
     "ParameterKey": "s3BucketName",
-    "ParameterValue": "f5-cft-v2"
+    "ParameterValue": "mwb-public"
   },
   {
     "ParameterKey": "s3BucketRegion",
-    "ParameterValue": "us-east-1"
+    "ParameterValue": "eu-west-1"
   },
   {
     "ParameterKey": "sshKey",
-    "ParameterValue": ""
+    "ParameterValue": "wardbopp-keypair"
   },
   {
     "ParameterKey": "throughput",
@@ -109,7 +109,7 @@
   },
   {
     "ParameterKey": "uniqueString",
-    "ParameterValue": "myUniqStr"
+    "ParameterValue": "mwbdademo"
   },
   {
     "ParameterKey": "version",
@@ -121,6 +121,6 @@
   },
   {
     "ParameterKey": "vpcId",
-    "ParameterValue": ""
+    "ParameterValue": "vpc-0fdafe16ccc2a97a1"
   }
 ]

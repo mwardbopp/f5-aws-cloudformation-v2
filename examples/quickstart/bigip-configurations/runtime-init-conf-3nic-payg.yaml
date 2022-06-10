@@ -89,6 +89,7 @@ extension_services:
             class: Provision
             asm: nominal
             ltm: nominal
+            avr: nominal
           My_Ntp:
             class: NTP
             servers:
