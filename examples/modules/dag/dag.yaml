@@ -404,15 +404,19 @@ Parameters:
     Description: Select true if you would like to provision an internal elastic load balancer.
     Type: String
   restrictedSrcAddressApp:
+    AllowedPattern: (\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})/(\d{1,2})
     ConstraintDescription: Must be a valid IP CIDR range of the form x.x.x.x/x.
     Description: REQUIRED - The IP address range that can be used to access web traffic (80/443) to the EC2 instances.
-    Default: "37.228.202.168/32"
-    Type: CommaDelimitedList
+    MaxLength: '18'
+    MinLength: '9'
+    Type: String
   restrictedSrcAddressMgmt:
+    AllowedPattern: (\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})/(\d{1,2})
     ConstraintDescription: Must be a valid IP CIDR range of the form x.x.x.x/x.
     Description: REQUIRED - The IP address range used to SSH and access management GUI on the EC2 instances.
-    Default: "37.228.202.168/32"
-    Type: CommaDelimitedList
+    MaxLength: '18'
+    MinLength: '9'
+    Type: String
   restrictedSrcPort:
     ConstraintDescription: Must be a valid integer.
     Default: 8443
@@ -803,11 +807,11 @@ Resources:
     Properties:
       GroupDescription: 'Public or external interface rules'
       SecurityGroupIngress:
-        - CidrIp: !Select [ 1, !Ref restrictedSrcAddressApp ]
+        - CidrIp: !Ref restrictedSrcAddressApp
           FromPort: 80
           IpProtocol: tcp
           ToPort: 80
-        - CidrIp: !Select [ 1, !Ref restrictedSrcAddressApp ]
+        - CidrIp: !Ref restrictedSrcAddressApp
           FromPort: 443
           IpProtocol: tcp
           ToPort: 443
@@ -868,11 +872,11 @@ Resources:
     Properties:
       GroupDescription: 'Management interface rules'
       SecurityGroupIngress:
-        - CidrIp: !Select [0, !Ref restrictedSrcAddressMgmt]
+        - CidrIp: !Ref restrictedSrcAddressMgmt
           FromPort: 22
           IpProtocol: tcp
           ToPort: 22
-        - CidrIp: !Select [0, !Ref restrictedSrcAddressMgmt]
+        - CidrIp: !Ref restrictedSrcAddressMgmt
           FromPort: !Ref restrictedSrcPort
           IpProtocol: tcp
           ToPort: !Ref restrictedSrcPort
@@ -903,7 +907,7 @@ Resources:
   BigipMgmtSecurityGroupIngressVip80:
     Condition: 1nic
     Properties:
-      CidrIp: !Select [0, !Ref restrictedSrcAddressMgmt]
+      CidrIp: !Ref restrictedSrcAddressApp
       FromPort: 80
       GroupId: !Ref BigipMgmtSecurityGroup
       IpProtocol: tcp
@@ -912,7 +916,7 @@ Resources:
   BigipMgmtSecurityGroupIngressVip443:
     Condition: 1nic
     Properties:
-      CidrIp: !Select [0, !Ref restrictedSrcAddressApp]
+      CidrIp: !Ref restrictedSrcAddressApp
       FromPort: 443
       GroupId: !Ref BigipMgmtSecurityGroup
       IpProtocol: tcp
@@ -963,15 +967,15 @@ Resources:
         - IpProtocol: tcp
           FromPort: 22
           ToPort: 22
-          CidrIp: !Select [0, !Ref restrictedSrcAddressMgmt]
+          CidrIp: !Ref restrictedSrcAddressMgmt
         - IpProtocol: tcp
           FromPort: 80
           ToPort: 80
-          CidrIp: !Select [0, !Ref restrictedSrcAddressApp]
+          CidrIp: !Ref restrictedSrcAddressApp
         - IpProtocol: tcp
           FromPort: 443
           ToPort: 443
-          CidrIp: !Select [0, !Ref restrictedSrcAddressApp]
+          CidrIp: !Ref restrictedSrcAddressApp
         - IpProtocol: tcp
           FromPort: 80
           ToPort: 80
@@ -1004,7 +1008,7 @@ Resources:
         - IpProtocol: tcp
           FromPort: 22
           ToPort: 22
-          CidrIp: !Select [0, !Ref restrictedSrcAddressMgmt]
+          CidrIp: !Ref restrictedSrcAddressMgmt
       Tags:
         - Key: costcenter
           Value: !Ref cost
