@@ -648,6 +648,7 @@ Resources:
   BigIpInstance01:
     Type: 'AWS::CloudFormation::Stack'
     Properties:
+      DisableRollback: true
       TemplateURL: !Sub
         - 'https://${S3Bucket}.s3.${S3Region}.amazonaws.com/${artifactLocation}modules/bigip-standalone/bigip-standalone.yaml'
         - S3Region: !Ref 's3BucketRegion'
@@ -722,6 +723,7 @@ Resources:
   BigIpInstance02:
     Type: 'AWS::CloudFormation::Stack'
     Properties:
+      DisableRollback: true
       TemplateURL: !Sub
         - 'https://${S3Bucket}.s3.${S3Region}.amazonaws.com/${artifactLocation}modules/bigip-standalone/bigip-standalone.yaml'
         - S3Region: !Ref 's3BucketRegion'
@@ -794,6 +796,7 @@ Resources:
   Dag:
     Type: AWS::CloudFormation::Stack
     Properties:
+      DisableRollback: true
       TemplateURL: !Sub
         - https://${S3Bucket}.s3.${S3Region}.amazonaws.com/${artifactLocation}modules/dag/dag.yaml
         - S3Region: !Ref 's3BucketRegion'
@@ -891,6 +894,7 @@ Resources:
   Network:
     Type: 'AWS::CloudFormation::Stack'
     Properties:
+      DisableRollback: true
       TemplateURL: !Sub
         - 'https://${S3Bucket}.s3.${S3Region}.amazonaws.com/${artifactLocation}modules/network/network.yaml'
         - S3Region: !Ref 's3BucketRegion'
