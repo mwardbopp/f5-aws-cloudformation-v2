@@ -25,7 +25,7 @@
       "bigIpMgmtAddress01": "10.0.1.11",
       "bigIpMgmtAddress02": "10.0.5.11",
       "numAzs": "2",
-      "numSubnets": "4",
+      "numSubnets": "3",
       "owner": "m.ward-bopp@f5.com",
       "provisionExampleApp": "true",
       "provisionPublicIpMgmt": "true",
